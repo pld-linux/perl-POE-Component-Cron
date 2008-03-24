@@ -6,37 +6,36 @@
 %define	pdir	POE
 %define	pnam	Component-Cron
 Summary:	POE::Component::Cron - Schedule POE Events using a cron spec
-#Summary(pl):	
+Summary(pl.UTF-8):	POE::Component::Cron - szeregowanie zdarzeń POE przy użyciu opisów crona
 Name:		perl-POE-Component-Cron
 Version:	0.018
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c1952d80a41d7cd221f2410ede08d7b9
+URL:		http://search.cpan.org/dist/POE-Component-Cron/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(DateTime)
-BuildRequires:	perl(DateTime::Event::Cron)
-BuildRequires:	perl(DateTime::Event::Random)
-BuildRequires:	perl(POE)
+BuildRequires:	perl-DateTime
+BuildRequires:	perl-DateTime-Event-Cron
+BuildRequires:	perl-DateTime-Event-Random
+BuildRequires:	perl-POE
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This component encapsulates a session that sends events to client sessions
-on a schedule as defined by a DateTime::Set iterator.	The implementation is 
-straight forward if a little limited.
+This component encapsulates a session that sends events to client
+sessions on a schedule as defined by a DateTime::Set iterator. The
+implementation is straight forward if a little limited.
 
-This is Beta code.  The API is close to jelling.  I'd love to
-hear your ideas if you want to share them.
-
-
-# %description -l pl
-# TODO
+%description -l pl.UTF-8
+Ten komponent obudowuje sesję wysyłającą zdarzenia do sesji klienckich
+zgodnie z planem określonym przez iterator DateTime::Set.
+Implementacja jest bezpośrednia, choć nieco ograniczona.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -61,5 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/POE/Component/*.pm
-#%%{perl_vendorlib}/POE/Component/Cron
 %{_mandir}/man3/*
