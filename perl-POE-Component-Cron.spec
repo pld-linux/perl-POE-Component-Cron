@@ -8,13 +8,13 @@
 Summary:	POE::Component::Cron - Schedule POE Events using a cron spec
 Summary(pl.UTF-8):	POE::Component::Cron - szeregowanie zdarzeń POE przy użyciu opisów crona
 Name:		perl-POE-Component-Cron
-Version:	0.018
+Version:	0.019
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c1952d80a41d7cd221f2410ede08d7b9
+# Source0-md5:	0d19dcda613946c90846d3359ba2e628
 URL:		http://search.cpan.org/dist/POE-Component-Cron/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
